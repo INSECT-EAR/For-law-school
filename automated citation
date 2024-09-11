@@ -1,4 +1,4 @@
-st.title('法学格式引文自动转换')
+st.title('法学格式引文自动转换-测试版')
 string=st.text_area('请在此处输入原引文格式',height=5,max_chars=20000)
 raw_string_list=string.strip().split('\n')
 string_list=[]
