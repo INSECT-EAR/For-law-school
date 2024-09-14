@@ -8,7 +8,6 @@ Created on Tue Sep 10 20:25:39 2024
 
 import streamlit as st
 import re
-import pyperclip
 
 def switch_button(raw_string_list): #定义单击按钮后的转换函数
     string_list=[]
@@ -197,11 +196,6 @@ with tab1:
     if st.button('开始转换'):
         raw_string_list=string.strip().split('\n')
         switch_button(raw_string_list)
-    
-    if st.button('复制结果'):    
-        if st.session_state.result:
-            st.info('已将转换结果复制到剪贴板')        
-        pyperclip.copy('\n'.join(st.session_state.result))
         
     show_result()
     
@@ -218,5 +212,5 @@ with tab2:
     with st.expander('三、外文引文格式要求'):
         st.write('1、期刊格式\n\n作者.标题[J].期刊名,年份,卷数(期数):页码数.')
         st.write('2、图书格式\n\n作者.书名[M].出版社:出版时间.（出版年份应位于出版时间的前四位）')
-        st.write('注意：外文引文中作者名有缩写的应去掉缩写符号“.”，否则无法识别；\n\n输出的期刊名斜体格式无法通过剪贴板复制，请手动添加斜体或在网页上Ctrl+c自行复制。目前仅主要支持英文及德文的引文转换。')
+        st.write('注意：外文引文中作者名有缩写的应去掉缩写符号“.”，否则无法识别；\n\n输出的期刊名斜体格式无法通过剪贴板复制，请在网页上Ctrl+c自行复制。目前仅主要支持英文及德文的引文转换。')
     
